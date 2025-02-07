@@ -1,0 +1,41 @@
+{%  extends "PortlandBreweries_base.html" %}{% comment %}This line loads the base structure for the page{% endcomment %}
+
+{% block header %}Brewers Association database{% endblock %}
+
+{% block content %}
+<body class="OBDB_background">
+    {% comment %}Forms the page content container{% endcomment %}
+    <div class="div_container">
+        {% comment %}Displays the brewery details in a table format to align labels and values{% endcomment %}
+        <h2 id="search_header">Search Results for "{{ input }}"</h2>
+        <table>
+            <tr class="tbl_header">
+                <th class="left"><label>Brewery:</label></th>
+                <th class="center"><label>Address:</label></th>
+                <th class="right"></th>
+            </tr>
+            {% for brewery in breweries %}
+            <tr>
+                <td class="left">{{ brewery.name }}</td>
+                <td class="center">{{ brewery.address_1 }}</td>
+                {% comment %}Button to the brewery's website{% endcomment %}
+                <td class="right"><a href="{{ brewery.website_url }}" class="url_btn"><button id="btn" name="Website">Website</button></a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% comment %}Forms the search bar{% endcomment %}
+        <div id="search_container">
+            {% comment %}Retrieves the SearchResult function by its URL{% endcomment %}
+            <p class="tbl_header left">Make another search<p>
+            <form method="GET" action="{% url 'DBsearchResults' %}">
+                {% comment %}User input field to specify query by name{% endcomment %}
+                <input type="text" id="search-bar" name="q" placeholder="Search...">
+                {% comment %}Button to query the API database{% endcomment %}
+                <button type="submit" id="search-btn">Search</button>
+                {% comment %}Button back to the initial API database display{% endcomment %}
+                <a href="{% url 'OpenBreweryDB' %}"><button type="button" id="search-btn" value="Back to Portland Breweries">Back to Portland Breweries</button></a>
+            </form>
+        </div>
+    </div>
+</body>
+{% endblock %}

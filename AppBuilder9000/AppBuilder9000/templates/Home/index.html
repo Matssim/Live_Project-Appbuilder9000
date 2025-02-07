@@ -1,0 +1,200 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page-title %}App Builder 9000{% endblock %}
+{% block page-subtitle %}Python Live Project{% endblock %}
+{% block button1 %}<a href="#apps" class="contact-btn">Portfolio</a>{% endblock %}
+{% block button2 %}<a href="#about" class="contact-btn">Contact Us</a>{% endblock %}
+
+{% block appcontent %}
+<section class="masonry-grid" id="apps">
+    <br><br>
+    <h2 class="sub-title">App Directory</h2>
+    <div class="grid">
+        <!-- Journal Link -->
+        <a href="{% url 'journal_home' %}" class="grid-item app-image">
+            <img src="{% static 'images/app-images/journal_image.jpg' %}" alt="Journal App">
+            <div class="fadedbox">
+                <div class="title text">Journal</div>
+            </div>
+        </a>
+        <!-- END Journal Link -->
+
+        <!-- Dead By Daylight -->
+        <a href="{% url 'deadByDaylight_home' %}" class="grid-item app-image">
+            <img src="{% static 'images/app-images/DBDTitle.png' %}" alt="Dead By Daylight">
+            <div class="fadedbox">
+                <div class="title text">Dead By Daylight</div>
+            </div>
+        </a>
+        <!-- End Dead By Daylight -->
+
+        <!-- Dwarf Fortress Generator -->
+        <a href="{% url 'dfort_home' %}" class="grid-item app-image">
+            <img src="{% static 'images/app-images/Dwarf.png' %}" alt="Dwarf Fort Logo">
+            <div class="fadedbox">
+                <div class="title text">Dwarf Fortress Generator</div>
+            </div>
+        </a>
+        <!-- End Dwarf Fortress Generator -->
+
+        <!-- ItemsApp -->
+        <a href="{% url 'itemsApp_home' %}" class="grid-item app-image">
+            <img src="{% static 'images/app-images/ItemsApp.jpg' %}" alt="Items App">
+            <div class="fadedbox">
+                <div class="title text">OSRS App</div>
+            </div>
+        </a>
+        <!-- End ItemsApp -->
+
+        <!-- StatBattler App -->
+        <a href="{% url 'StatBattler_home' %}" class="grid-item app-image">
+            <img src="{% static 'images/app-images/SB_AppImage.png' %}" alt="StatBattler App">
+            <div class="fadedbox">
+                <div class="title text">Stat Battler App</div>
+            </div>
+        </a>
+        <!-- End StatBattler App -->
+
+        <!-- Herbs -->
+        <a href="{% url 'herbs_home' %}" class="grid-item app-image">
+            <img src="{% static 'images/app-images/cinnamon.jpg' %}" alt="Cinnamon">
+            <div class="fadedbox">
+                <div class="title text">The Power of Herbs</div>
+            </div>
+        </a>
+        <!-- End of Herbs -->
+
+        <!-- Animal Crossing -->
+        <a href="{% url 'animalcrossing_home' %}" class="grid-item app-image">
+            <img src="{% static 'images/app-images/ACimage.jpg' %}" alt="AnimalCrossing App">
+            <div class="fadedbox">
+                <div class="title text">Animal Crossing</div>
+            </div>
+        </a>
+        <!-- End Animal Crossing -->
+
+        <!-- Ask Your Angels -->
+        <a href="{% url 'aya_home' %}" class="grid-item app-image">
+            <img src="{% static 'images/app-images/AskYourAngels.png' %}" height="300" width="241" alt="Ask Your Angels App">
+            <div class="fadedbox">
+                <div class="title text">Ask Your Angels</div>
+            </div>
+        </a>
+        <!-- End of Ask Your Angels -->
+
+        <!-- Planets -->
+        <a href="{% url 'planets_home' %}" class="grid-item app-image">
+            <img src="{% static '/images/solar_system_bg.png' %}" height="300" width="450" alt="Planets App">
+            <div class="fadedbox">
+                <div class="title text">Planets</div>
+            </div>
+        </a>
+        <!-- End of Planets -->
+
+
+        <!-- Trail Blazers Stats -->
+        <a href="{% url 'TB_Stat_Tracker_home' %}" class="grid-item app-image">
+            <img src="{% static '/images/app-images/Blazers.jpg' %}" height="300" width="450" alt="Trail Blazers Stat Tracker">
+            <div class="fadedbox">
+                <div class="title text">Trail Blazers Stat Tracker</div>
+            </div>
+        </a>
+        <!-- End of Trail Blazers Stats -->
+
+        <!-- Celtics Archive -->
+        <a href="{% url 'CelticsArchive_home' %}" class="grid-item app-image">
+            <img src="{% static '/images/app-images/CelticsArchive_logo.jpg' %}" height="400" width="400" alt="Celtics Archive">
+            <div class="fadedbox">
+                <div class="title text">The Celtics Archive</div>
+            </div>
+        </a>
+        <!-- Celtics Archive -->
+
+        <!-- NFL -->
+        <a href="{% url 'NFL_home' %}" class="grid-item app-image">
+            <img src="{% static '/images/app-images/NFL.jpg' %}" height="300" width="450" alt="NFL Logo">
+            <div class="fadedbox">
+                <div class="title text">NFL</div>
+            </div>
+        </a>
+        <!-- End NFL -->
+
+
+        <!-- Anime Junction-->
+        <a href="{% url 'anime_home' %}" class="grid-item app-image">
+            <img src="{% static 'images/app-images/animelogo.jpg' %}" height="350" width="350" alt="Anime Logo">
+            <div class="fadedbox">
+                <div class="title text">Anime Junction</div>
+            </div>
+        </a>
+        <!-- Anime Junction -->
+
+        <!-- NOLA -->
+        <a href="{% url 'home' %}" class="grid-item app-image">
+            <img src="{% static '/images/app-images/fq1.jpg' %}" height="300" width="450" alt="French Quarter Architecture">
+            <div class="fadedbox">
+                <div class="title text">New Orleans</div>
+            </div>
+        </a>
+        <!-- End NOLA -->
+        <!-- NFL -->
+        <a href="{% url 'home' %}" class="grid-item app-image">
+            <img src="{% static '/images/NFL2.jpg' %}" height="300" width="450" alt="NFL Logo">
+            <div class="fadedbox">
+                <div class="title text">NFL</div>
+            </div>
+        </a>
+        <!-- End NFL -->
+
+        <!-- GroceryCost -->
+        <a href="{% url 'groceryhome' %}" class="grid-item app-image">
+            <img src="{% static '/images/app-images/grocerySales.jpg' %}" height="300" width="450" alt="Store with sales">
+            <div class="fadedbox">
+                <div class="title text">Grocery Costs</div>
+            </div>
+        </a>
+        <!-- End GroceryCost -->
+
+        <!-- App Idea Archive -->
+        <a href="{% url 'AppIdeaArchive:aia_home' %}" class="grid-item app-image">
+            <img src="{% static '/images/MainThumb.jpg' %}" height="450" width="450" alt="Idea Hot Air Balloon">
+            <div class="fadedbox">
+                <div class="title text">App Idea Archive</div>
+            </div>
+        </a>
+        <!-- End App Idea Archive -->
+
+        <!-- Portland Breweries -->
+        <a href="{% url 'PDX_home' %}" class="grid-item app-image">
+            <img src="{% static '/images/ten_barrel_brewing1.jpg' %}" height="300" width="450" alt="Beers">
+            <div class="fadedbox">
+                <div class="title text">Portland Breweries</div>
+            </div>
+        </a>
+        <!-- End Portland Breweries -->
+    </div>
+
+</section>
+
+<section class="beating-heart" id="about">
+    <div class="wrapper">
+        <h2 class="sub-title">About Us</h2>
+        <p>We're creating software designed to help hobbyists keep track of their collections of items <br/>
+            as well as interact with APIs and use DataScraping to get up to date information on things <br/>
+            related to those collections and hobbies. This project is built using Python, Django, SQLite,
+            and HTML/CSS.</p>
+        <span>We</span>
+        <svg class="heart" viewBox="0 0 50 50">
+            <path style="fill:red;"
+                  d="M24.85,10.126c2.018-4.783,6.628-8.125,11.99-8.125c7.223,0,12.425,6.179,13.079,13.543
+                	c0,0,0.353,1.828-0.424,5.119c-1.058,4.482-3.545,8.464-6.898,11.503L24.85,48L7.402,32.165c-3.353-3.038-5.84-7.021-6.898-11.503
+                	c-0.777-3.291-0.424-5.119-0.424-5.119C0.734,8.179,5.936,2,13.159,2C18.522,2,22.832,5.343,24.85,10.126z"/>
+        </svg>
+        <span>Python</span>
+    </div>
+</section>
+
+
+
+{% endblock %}

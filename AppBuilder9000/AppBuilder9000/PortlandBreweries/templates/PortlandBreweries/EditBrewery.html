@@ -1,0 +1,26 @@
+{% extends "PortlandBreweries_base.html" %}{% comment %}This line loads the base structure for the page{% endcomment %}
+{% load crispy_forms_tags %}{% comment %}This line loads the crispy forms structure to style the form{% endcomment %}
+
+{% block header %}Edit Brewery{% endblock %}
+
+{% block content %}
+<body class="displayDB_background">
+    {% comment %}Forms the page content (edit form) container{% endcomment %}
+    <div class="div_container">
+        <form method="POST">
+            <div class="brewery_form">
+                {% comment %}Cross Site Request Forgery (csrf_token) protection{% endcomment %}
+                {%  csrf_token %}
+                {% comment %}Calls the form in the crispy forms structure{% endcomment %}
+                {{ form|crispy }}
+            </div>
+            <div class="btn_container">
+                {% comment %}"Submit changes" button{% endcomment %}
+                <input type="submit" onclick="displayEditMessage()" id="btn" value="Submit Changes">
+                {% comment %}Cancel button, returns user to brewery details page{% endcomment %}
+                <a href="{% url 'DisplayDetails' brewery.pk %}" class="url_btn"><button type="submit" id="btn" formnovalidate>Cancel</button></a>
+            </div>
+        </form>
+    </div>
+</body>
+{% endblock %}

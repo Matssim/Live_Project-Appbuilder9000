@@ -1,0 +1,40 @@
+{%  extends "PortlandBreweries_base.html" %}{% comment %}This line loads the base structure for the page{% endcomment %}
+
+{% block header %}Look up breweries{% endblock %}
+
+{% block content %}
+<body class="displayDB_background">
+    {% comment %}Display breweries table{% endcomment %}
+    <div class="div_container">
+        <div id="search_container">
+            <h2 id="search_header">Search Results for "{{ query }}"</h2>
+            {% comment %}Retrieves the SearchResult function by its URL{% endcomment %}
+            <form method="GET" action="{% url 'SearchResults' %}">
+                {% comment %}User input field to specify query by name{% endcomment %}
+                <input type="text" id="search-bar" name="q" placeholder="Search by name...">
+                {% comment %}Button to query the database{% endcomment %}
+                <button type="submit" id="search-btn">Search</button>
+                {% comment %}Button to return to full list of breweries{% endcomment %}
+                <a href="{% url 'DisplayBreweries' %}"><button type="button" id="search-btn" value="Back">Back to Breweries</button></a>
+                {% comment %}Button to add brewery form{% endcomment %}
+                <a href="{% url 'AddBrewery' %}"><button type="button" id="search-btn" value="Add Brewery">Add Brewery</button></a>
+            </form>
+        </div>
+        <table>
+            <tr class="tbl_header"> {% comment %}Sets the table header{% endcomment %}
+                <th class="left">Name:</th>
+                <th class="center">Address:</th>
+                <th class="right"></th>
+            </tr>
+            {% for result in results %}
+            <tr> {% comment %}Retrieves the Brewery objects and lists some corresponding fields as rows{% endcomment %}
+                <td class="left">{{ result.name }}</td>
+                <td class="center">{{ result.main_address }}</td>
+                {% comment %}Button to the brewery's details page{% endcomment %}
+                <td class="right"><a href="{% url 'DisplayDetails' result.pk %}" class="url_btn"><button id="btn" name="Details">Details</button></a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+{% endblock %}

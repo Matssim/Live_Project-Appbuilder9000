@@ -1,0 +1,50 @@
+{%  extends "PortlandBreweries_base.html" %}{% comment %}This line loads the base structure for the page{% endcomment %}
+
+{% comment %}Display's the selected brewery's name as the header{% endcomment %}
+{% block header %}{{ brewery.name }}{% endblock %}
+
+{% block content %}
+<body class="displayDB_background">
+    {% comment %}Forms the page content (edit form) container{% endcomment %}
+    <div class="div_container">
+        <div class="brewery_form">
+            {% comment %}Displays the brewery details in a table format to align labels and values{% endcomment %}
+            <table>
+                <tr>
+                    <td class="left"><label>Established:</label></td>
+                    <td class="center">{{ brewery.est_year }}</td>
+                </tr>
+                <tr>
+                    <td class="left"><label>Main address:</label></td>
+                    <td class="center">{{ brewery.main_address }}</td>
+                </tr>
+                <tr>
+                    <td class="left"><label>Main address open to the public?</label></td>
+                    <td class="center">{{ brewery.main_visit }}</td>
+                </tr>
+                <tr>
+                    <td class="left"><label>Alternate/visit address:</label></td>
+                    <td class="center">{{ brewery.visit_address }}</td>
+                </tr>
+                <tr>
+                    <td class="left"><label>Contact email:</label></td>
+                    <td class="center">{{ brewery.email }}</td>
+                </tr>
+                {% comment %}Description section uses double colspan for both header and content, to compress layout{% endcomment %}
+                <tr>
+                    <td class="left" colspan="2"><label>Description:</label></td>
+                </tr>
+                <tr>
+                    <td class="left" colspan="2">{{ brewery.description }}</td>
+                </tr>
+            </table>
+            <div class="btn_container">
+                {% comment %}Button passes brewery instance by primary key to the edit template{% endcomment %}
+                <a href="{% url 'EditBrewery' brewery.pk %}" class="url_btn"><button id="btn" name="Edit">Edit</button></a>
+                {% comment %}Button passes brewery instance by primary key to the delete function{% endcomment %}
+                <a href="{% url 'DeleteBrewery' brewery.pk %}" class="url_btn"><button id="btn" name="Delete">Delete</button></a>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}

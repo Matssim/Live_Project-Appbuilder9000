@@ -1,0 +1,25 @@
+{%  extends "PortlandBreweries_base.html" %}{% comment %}This line loads the base structure for the page{% endcomment %}
+
+{% block header %}Upcoming Beer Events in Portland{% endblock %}
+
+
+{% block content %}
+<body class="event_background">
+    {% comment %}Forms the page content container{% endcomment %}
+    <div class="div_container">
+        <div class="brewery_form">
+            {% comment %}Creates a table to display the event data scraped from the Travel Portland Website{% endcomment %}
+            <table>
+                {% for item in dictionaries %}
+                <tr class="tbl_header">
+                    <td class="left">{{ item.date }}</td>
+                    <td class="center">{{ item.name }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            {% comment %}Forms an empty container below the content to align bottom margin{% endcomment %}
+            <div class="btn_container"></div>
+        </div>
+    </div>
+</body>
+{% endblock %}

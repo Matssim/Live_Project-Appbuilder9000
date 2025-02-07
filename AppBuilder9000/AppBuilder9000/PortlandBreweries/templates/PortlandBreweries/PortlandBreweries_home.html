@@ -1,0 +1,24 @@
+{%  extends "PortlandBreweries_base.html" %}{% comment %}This line loads the base structure for the page{% endcomment %}
+
+{% block header %}Portland Breweries{% endblock %}{% comment %}Home page header{% endcomment %}
+
+{% block content %}
+    {% comment %}Forms the container for the home page navigation buttons{% endcomment %}
+    <div class="container">
+        <div class="row" id="button_row">
+            {% comment %}Button to the local database page{% endcomment %}
+            <a href="{% url 'DisplayBreweries' %}"class="col DB_card-body">
+                <div class="card_text">Our Database</div>
+            </a>
+            {% comment %}Button to the OpenBrewery database page{% endcomment %}
+            <a href="{% url 'OpenBreweryDB' %}"class="col OBDB_card-body">
+                <div class="card_text">Brewers Association Database</div>
+            </a>
+            {% comment %}Button to the events page{% endcomment %}
+            <a href="{% url 'BeerEvents' %}"class="col event_card-body">
+                <div class="card_text">Events</div>
+            </a>
+        </div>
+    </div>
+
+{% endblock %}

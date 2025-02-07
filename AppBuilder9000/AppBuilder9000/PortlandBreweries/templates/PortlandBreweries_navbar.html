@@ -1,0 +1,9 @@
+{% comment %}Establishes the content of the navbar{% endcomment %}
+<div class="navbar sticky-top">
+    <div class="d-flex flex-row bd-highlight mb-3"> {% comment %}Creates a separate Boostrap structure for the navbar{% endcomment %}
+        <a class="p-2 bd-highlight" href="{% url 'PDX_home' %}">Home</a> {% comment %}Home button{% endcomment %}
+        <a class="p-2 bd-highlight" href="{% url 'DisplayBreweries' %}">Our Database</a>{% comment %}Button display brewery table{% endcomment %}
+        <a class="p-2 bd-highlight" href="{% url 'OpenBreweryDB' %}">Brewers Association Database</a>{% comment %}Button display OpenBreweryDB template{% endcomment %}
+        <a class="p-2 bd-highlight" href="{% url 'BeerEvents' %}">Events</a> {% comment %}Beer events button{% endcomment %}
+    </div>
+</div>

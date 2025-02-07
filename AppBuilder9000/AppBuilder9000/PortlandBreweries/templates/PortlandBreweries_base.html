@@ -1,0 +1,27 @@
+{% load static %} {% comment %}This line will load static files (css, images etc.) to apply to all views{% endcomment %}
+{% load django_bootstrap5 %} {% comment %}Loads Bootstrap to the base template{% endcomment %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Portland Breweries{% endblock %}</title>{% comment %}Establishes the page title (browser tab visual){% endcomment %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/PortlandBreweries_style.css' %}"> {% comment %}Calls the css style sheet{% endcomment %}
+        <link href="https://fonts.googleapis.com/css2?family=Asul:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Red+Rose&display=swap"
+              rel="stylesheet">{% comment %}References fonts from google fonts{% endcomment %}
+    </head>
+
+    <body>
+        {% bootstrap_css %} {% comment %}Applies Bootstrap CSS to all body elements{% endcomment %}
+        {% include "PortlandBreweries_navbar.html" %}{% comment %}This line will load the external navbar file to apply to all views{% endcomment %}
+        <header class="header_title">
+            {% block header %}{% comment %}This section references the body header of each view{% endcomment %}{% endblock %}
+        </header>
+        {% block content %}{% comment %}This section references the body content of each view{% endcomment %}{% endblock %}
+        {% include "PortlandBreweries_footer.html" %}{% comment %}This line will load the external footer file to apply to all views{% endcomment %}
+        {% bootstrap_javascript %} {% comment %}Applies Bootstrap JavaScript to all body elements{% endcomment %}
+        <script src="{% static 'js/PortlandBreweries_script.js' %}"></script> {% comment %}Applies custom JavaScript to all body elements{% endcomment %}
+    </body>
+
+</html>

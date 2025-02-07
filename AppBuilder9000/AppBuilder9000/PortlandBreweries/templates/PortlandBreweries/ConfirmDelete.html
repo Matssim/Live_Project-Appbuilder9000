@@ -1,0 +1,23 @@
+{% extends "PortlandBreweries_base.html" %}{% comment %}This line loads the base structure for the page{% endcomment %}
+
+{% block header %}Confirm Deletion{% endblock %}
+
+{% block content %}
+<body class="displayDB_background">
+    {% comment %}Forms the page content (confirm deletion form) container{% endcomment %}
+    <div class="div_container">
+        <form method="POST">
+            <div class="brewery_form">
+            {% csrf_token %}
+                <h2>Are you sure you would like to delete {{brewery.name}} from the database?</h2>
+            </div>
+            <div class="btn_container">
+                {% comment %}Button to submit/confirm deletion{% endcomment %}
+                <input type="submit" onclick="displayDeleteMessage()" value="Confirm" id="btn">
+                {% comment %}Button to cancel deletion and return user to brewery details page{% endcomment %}
+                <button id="btn" name="Cancel">Cancel</button>
+            </div>
+        </form>
+    </div>
+</body>
+{% endblock %}

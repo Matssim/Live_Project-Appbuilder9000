@@ -1,0 +1,256 @@
+
+/***** GENERAL STYLING *****/
+
+html{
+    overflow-x: hidden; /*Hides the horizontal scroll, regardless of size*/
+}
+
+.header_title { /*Styles the header*/
+    font-family: "Red Rose";
+	padding: 2.5vw;
+	text-align: center;
+    color: rgb(188, 243, 187);
+    font-size: 5vw;
+    -webkit-text-stroke: 0.04vw black;
+}
+
+body{ /*Creates the background styling for the home page template*/
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../../static/images/downtown_pdx2.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: top;
+    position: relative;
+}
+
+.url_btn { /*Overrides the underline styling for anchor tags*/
+    text-decoration: none;
+}
+
+.displayDB_background{/*Creates the background styling for the local database templates*/
+    min-height: 100vh;
+    background-image: url('../../static/images/ten_barrel_brewing1.jpg');
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: top;
+    position: relative;
+}
+
+.OBDB_background{ /*Creates the background styling for the OpeBrewery database templates*/
+    min-height: 100vh;
+    background-image: url('../../static/images/brewery1.jpg');
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: top;
+    position: relative;
+}
+
+.event_background{ /*Creates the background styling for the event template*/
+    min-height: 100vh;
+    background-image: url('../../static/images/festival.jpg');
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+}
+
+.div_container { /*Styles and positions the general container*/
+    position: relative;
+    z-index: 1;
+	width: 50vw;
+	height: auto;
+	border-radius: 1vw;
+	border: 2px solid rgba(188, 243, 187);
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0.5vw;
+	margin-bottom: 2vw;
+	background-color: rgba(237, 165, 117, 0.71);
+    box-sizing: border-box;
+}
+
+/***** NAVBAR STYLING *****/
+
+.navbar { /*Navbar styling*/
+    overflow: hidden;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+/*Navbar links*/
+.navbar a { /*Styles the navbar button by calling the anchor tags*/
+    float: left;
+    display: block;
+    color: white;
+    padding: .75vw 1vw;
+    text-decoration: none;
+    font-family: "Montserrat";
+    font-size: 1.75vw;
+    text-align: center;
+    position: relative;
+}
+
+/***** HOME PAGE STYLING *****/
+
+.DB_card-body{ /*Styles the button to the local database page*/
+    background-image: url('../../static/images/ten_barrel_brewing1.jpg');
+    background-size: 100% 100%;
+    min-height: 15vw;
+    margin-right: 1vw;
+    border-radius: 1vw;
+    border: solid rgb(188, 243, 187);
+    text-decoration: none;
+}
+
+.OBDB_card-body{ /*Styles the button to the OpenBrewery database page*/
+    background-image: url('../../static/images/brewery1.jpg');
+    background-size: 100% 100%;
+    min-height: 15vw;
+    margin-right: 1vw;
+    border-radius: 1vw;
+    border: solid rgb(188, 243, 187);
+    text-decoration: none;
+}
+
+.event_card-body{ /*Styles the button to the events page*/
+    background-image: url('../../static/images/festival.jpg');
+    background-size: 100% 100%;
+    min-height: 15vw;
+    border-radius: 1vw;
+    border: solid rgb(188, 243, 187);
+    text-decoration: none;
+}
+
+.card_text { /*Styles the button text*/
+    font-family: "Red Rose";
+	padding: 2.5vw;
+	text-align: center;
+    color: rgb(188, 243, 187);
+    font-size: 2vw;
+    -webkit-text-stroke: 0.05vw black;
+}
+
+/***** FORM STYLING *****/
+
+.brewery_form { /*Styles and positions the form contents*/
+    margin-top: 1vw;
+	margin-left: auto;
+	margin-right: auto;
+	width: 45vw;
+    color: black;
+    font-family: "Montserrat";
+    font-weight: bold;
+    font-size: 1vw;
+
+}
+
+.form-control { /*Uses crispy form tags to position the form fields */
+    width: 100%;
+    border-radius: 0.5vw;
+    margin-bottom: 1vw;
+}
+
+.form-select { /*Uses crispy form tags to position the main_visit field */
+    width: 100%;
+    border-radius: 0.5vw;
+    margin-bottom: 1vw;
+}
+
+.btn_container { /*Positions the form buttons*/
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 100%;
+    padding: 0.5vw;
+}
+
+#btn { /*Styles the form buttons*/
+	background-color: rgba(188, 243, 187);
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+    font-family: "Montserrat";
+    border-radius: 1vw;
+    padding: 0.3vw 0.8vw;
+}
+
+.tbl_header { /*Styles the table header*/
+    color: black;
+    font-family: "Red Rose";
+    font-weight: bold;
+    font-size: 1vw;
+}
+
+td { /*Styles the table rows*/
+    font-family: "Montserrat";
+    color: black;
+    font-size: 0.9vw;
+}
+
+.center { /*Positions the center column*/
+	text-align: left;
+	width: 50%;
+}
+
+.left { /*Positions the left column*/
+	text-align: left;
+    padding-left: 0.5vw;
+	width: 40%;
+}
+
+.right { /*Positions the right column*/
+	padding-right: 0.5vw;
+	width: 10%;
+}
+
+/***** SEARCH SECTION STYLING*****/
+
+#search_container {/*Positions the search section elements */
+    width: 100%;
+    padding: 0.5vw;
+}
+
+#search_header { /*Positions and styles the search results header */
+    text-align: center;
+    color: black;
+    font-family: "Red Rose";
+    font-weight: bold;
+    font-size: 2vw;
+}
+
+#search-bar {; /*Positions and styles the search bar */
+    font-family: "Montserrat";
+    border-radius: 1vw;
+    padding: 0.3vw 0.8vw;
+}
+
+#search-btn { /*Positions and styles the search section buttons */
+    background-color: rgba(188, 243, 187);
+    font-family: "Montserrat";
+    border-radius: 1vw;
+    padding: 0.3vw 0.8vw;
+}
+
+/***** FOOTER STYLING *****/
+
+.footer_container { /*Styles and positions the footer*/
+    background-color: rgba(0, 0, 0, 0.7);
+    margin: auto -10px -10px -10px;
+    width: 100%;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    padding: .75vw 1vw;
+    font-size: 1.25vw;
+}
