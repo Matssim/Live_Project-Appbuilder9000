@@ -10,7 +10,7 @@ In this project I developed a web application in the Django framework, compatibl
 ## Basic app, model and CRUD pages 
 Jump to: [Page Top](#live-project---appbuilder9000) | [External database API](#external-database-api) | [Displaying web scraped data](#displaying-web-scraped-data)
 
-Once I’d set up the PortlandBreweries app, it’s basic Model-View-Template (MVT) structure and linked it to the AppBuilder9000 main app I built the Brewery model and form for the local database. The model tracks 7 properties, 3 required and 4 optional. In order to register a brewery in the database, the user will have to provide its name, main address and whether that address is open to the public. That last property is a function to capture a common practice for breweries in Portland to sell their product onsite, due to the state’s tax regulations. The user is therefore prompted to specify whether the main address is their visit location and they can enter the optional property of a visit address, if it’s different from the main address. They’re also given the option to provide the brewery’s email address, year of establishment and a short description. 
+Once I’d set up the PortlandBreweries app, it’s basic Model-View-Template (MVT) structure and linked it to the AppBuilder9000 main app I built the Brewery <a href="https://github.com/Matssim/Live_Project-Appbuilder9000/blob/main/AppBuilder9000/AppBuilder9000/PortlandBreweries/models.py">model</a> and <a href="https://github.com/Matssim/Live_Project-Appbuilder9000/blob/main/AppBuilder9000/AppBuilder9000/PortlandBreweries/forms.py">form</a> for the local database. The model tracks 7 properties, 3 required and 4 optional. In order to register a brewery in the database, the user will have to provide its name, main address and whether that address is open to the public. That last property is a function to capture a common practice for breweries in Portland to sell their product onsite, due to the state’s tax regulations. The user is therefore prompted to specify whether the main address is their visit location and they can enter the optional property of a visit address, if it’s different from the main address. They’re also given the option to provide the brewery’s email address, year of establishment and a short description. 
 
 Brewery model:
 
@@ -42,7 +42,7 @@ Brewery form:
             model = Brewery
             fields = '__all__'
 
-The base template loads in Bootstrap, external fonts and static files, namely my custom CSS and JavaScript. Additionally, it calls in the navbar and footer templates to make sure all these elements render on each view. 
+The <a href="https://github.com/Matssim/Live_Project-Appbuilder9000/blob/main/AppBuilder9000/AppBuilder9000/PortlandBreweries/templates/PortlandBreweries_base.html">base template</a> loads in Bootstrap, external fonts and static files, namely my custom <a href="https://github.com/Matssim/Live_Project-Appbuilder9000/blob/main/AppBuilder9000/AppBuilder9000/PortlandBreweries/static/css/PortlandBreweries_style.css">CSS</a> and <a href="https://github.com/Matssim/Live_Project-Appbuilder9000/blob/main/AppBuilder9000/AppBuilder9000/PortlandBreweries/static/js/PortlandBreweries_script.js">JavaScript</a>. Additionally, it calls in the navbar and footer templates to make sure all these elements render on each view. 
 
 ```html
 {% load static %}
@@ -72,7 +72,7 @@ The base template loads in Bootstrap, external fonts and static files, namely my
 </html>
 ```
 
-The app has views and templates for the home page, and for the user to Add, Display, Edit and Delete entries.  
+The app has views and templates for the home page, and for the user to <a href="https://github.com/Matssim/Live_Project-Appbuilder9000/blob/main/AppBuilder9000/AppBuilder9000/PortlandBreweries/templates/PortlandBreweries/AddBrewery.html">Add</a>, <a href="https://github.com/Matssim/Live_Project-Appbuilder9000/blob/main/AppBuilder9000/AppBuilder9000/PortlandBreweries/templates/PortlandBreweries/BreweryDetails.html">Display</a>, <a href="https://github.com/Matssim/Live_Project-Appbuilder9000/blob/main/AppBuilder9000/AppBuilder9000/PortlandBreweries/templates/PortlandBreweries/EditBrewery.html">Edit</a> and <a href="https://github.com/Matssim/Live_Project-Appbuilder9000/blob/main/AppBuilder9000/AppBuilder9000/PortlandBreweries/templates/PortlandBreweries/ConfirmDelete.html">Delete</a> entries.  
 
     def home(request):
         return render(request, "PortlandBreweries/PortlandBreweries_home.html")
@@ -131,7 +131,7 @@ The app has views and templates for the home page, and for the user to Add, Disp
             return redirect('DisplayBreweries')
  
 
-I also created views/templates that allows the users to search for entries in the database and have them display 
+I also created views/templates that allows the users to <a href="https://github.com/Matssim/Live_Project-Appbuilder9000/blob/main/AppBuilder9000/AppBuilder9000/PortlandBreweries/templates/PortlandBreweries/SearchResults.html">search</a> for entries in the database and have them display 
 
     def SearchResults(request):
         query = request.GET.get('q', '')
@@ -144,7 +144,7 @@ I also created views/templates that allows the users to search for entries in th
 ## External database API 
 Jump to: [Page Top](#live-project---appbuilder9000) | [Basic app, model and CRUD pages](#basic-app,-model-and-crud-pages) | [Displaying web scraped data](#displaying-web-scraped-data)
 
-In addition to the database that the user can contribute to, I plugged in an API from the Open Brewery Database for the user to cross-reference against. This database is periodically updated with information from the Brewers Association’s database. For the basic view, I used a URL for the API that filters for breweries located in Portland, Oregon, to create a more lightweight JSON response and keep the load time relatively quick. The JSON response is then parsed and each object is instantiated and rendered to the template.  
+In addition to the database that the user can contribute to, I plugged in an API from the Open Brewery Database for the user to cross-reference against. This database is periodically updated with information from the Brewers Association’s database. For the <a href="https://github.com/Matssim/Live_Project-Appbuilder9000/blob/main/AppBuilder9000/AppBuilder9000/PortlandBreweries/templates/PortlandBreweries/OpenBreweryDB.html">basic view</a>, I used a URL for the API that filters for breweries located in Portland, Oregon, to create a more lightweight JSON response and keep the load time relatively quick. The JSON response is then parsed and each object is instantiated and rendered to the template.  
 
     def OpenBreweryDB(request):
         response = requests.get("https://api.openbrewerydb.org/v1/breweries?by_state=oregon&by_city=portland")
@@ -155,7 +155,7 @@ In addition to the database that the user can contribute to, I plugged in an API
             breweries.append(brewerylist)
         return render(request, "PortlandBreweries/OpenBreweryDB.html", {'breweries': breweries})
 
-I then included a search bar letting the user to input a query, which is concatenated to a separate JSON request that queries the full database based on that input and returns a commensurate response, rendered to a separate search result view.  
+I then included a search bar letting the user to input a query, which is concatenated to a separate JSON request that queries the full database based on that input and returns a commensurate response, rendered to a separate <a href="https://github.com/Matssim/Live_Project-Appbuilder9000/blob/main/AppBuilder9000/AppBuilder9000/PortlandBreweries/templates/PortlandBreweries/OBDBsearchResults.html">search result view</a>. 
 
     def DBsearchResults(request):
         input = request.GET.get('q', '')
@@ -175,7 +175,7 @@ I then included a search bar letting the user to input a query, which is concate
 ## Displaying web scraped data 
 Jump to: [Page Top](#live-project---appbuilder9000) | [Basic app, model and CRUD pages](#basic-app,-model-and-crud-pages) | [External database API](#external-database-api) 
 
-In addition to the databases I included a regularly updated view to display upcoming beer events (festivals etc.). In order to automate this, I used the Beautiful Soup package to parse the TravelPortland website’s beer and breweries page, for the elements that displays upcoming beer events. The event name and date/dates are the scraped, instantiated as objects and rendered to a template. 
+In addition to the databases I included a regularly updated view to display upcoming beer events (festivals etc.). In order to automate this, I used the Beautiful Soup package to parse the <a href="https://www.travelportland.com/culture/beer/">TravelPortland website’s beer and breweries page</a>, for the elements that displays upcoming beer events. The event name and date/dates are the scraped, instantiated as objects and rendered to a <a href="https://github.com/Matssim/Live_Project-Appbuilder9000/blob/main/AppBuilder9000/AppBuilder9000/PortlandBreweries/templates/PortlandBreweries/BeerEvents.html">template</a>. 
 
     def BeerEvents(request):
         page = requests.get("https://www.travelportland.com/culture/beer/")
