@@ -2,7 +2,7 @@
 
 In this project I developed a web application in the Django framework, compatible with an existing parent structure. My app is an unofficial database and information site for breweries in Portland, Oregon. During my sprint, through several stories, I accomplished 3 main objectives. 
 
-* [Build a local database with Create-Read-Update-Delete (CRUD) functionality](#basic-app,-model-and-crud-pages)
+* [Build a local database with Create-Read-Update-Delete (CRUD) functionality](#basic-app-model-and-crud-pages)
 * [Integrate an external database API](#external-database-api)
 * [Integrate a web scraper to display regularly updated information from another website](#displaying-web-scraped-data)
 
