@@ -142,7 +142,7 @@ I also created views/templates that allows the users to <a href="https://github.
 
 
 ## External database API 
-Jump to: [Page Top](#live-project---appbuilder9000) | [Basic app, model and CRUD pages](#basic-app,-model-and-crud-pages) | [Displaying web scraped data](#displaying-web-scraped-data)
+Jump to: [Page Top](#live-project---appbuilder9000) | [Basic app, model and CRUD pages](#basic-app-model-and-crud-pages) | [Displaying web scraped data](#displaying-web-scraped-data)
 
 In addition to the database that the user can contribute to, I plugged in an API from the Open Brewery Database for the user to cross-reference against. This database is periodically updated with information from the Brewers Association’s database. For the <a href="https://github.com/Matssim/Live_Project-Appbuilder9000/blob/main/AppBuilder9000/AppBuilder9000/PortlandBreweries/templates/PortlandBreweries/OpenBreweryDB.html">basic view</a>, I used a URL for the API that filters for breweries located in Portland, Oregon, to create a more lightweight JSON response and keep the load time relatively quick. The JSON response is then parsed and each object is instantiated and rendered to the template.  
 
@@ -173,7 +173,7 @@ I then included a search bar letting the user to input a query, which is concate
 
 
 ## Displaying web scraped data 
-Jump to: [Page Top](#live-project---appbuilder9000) | [Basic app, model and CRUD pages](#basic-app,-model-and-crud-pages) | [External database API](#external-database-api) 
+Jump to: [Page Top](#live-project---appbuilder9000) | [Basic app, model and CRUD pages](#basic-app-model-and-crud-pages) | [External database API](#external-database-api) 
 
 In addition to the databases I included a regularly updated view to display upcoming beer events (festivals etc.). In order to automate this, I used the Beautiful Soup package to parse the <a href="https://www.travelportland.com/culture/beer/">TravelPortland website’s beer and breweries page</a>, for the elements that displays upcoming beer events. The event name and date/dates are the scraped, instantiated as objects and rendered to a <a href="https://github.com/Matssim/Live_Project-Appbuilder9000/blob/main/AppBuilder9000/AppBuilder9000/PortlandBreweries/templates/PortlandBreweries/BeerEvents.html">template</a>. 
 
@@ -193,4 +193,4 @@ In addition to the databases I included a regularly updated view to display upco
 
 [INSERT DEMO GIF] 
 
-Jump to: [Page Top](#live-project---appbuilder9000) | [Basic app, model and CRUD pages](#basic-app,-model-and-crud-pages) | [External database API](#external-database-api) | [Displaying web scraped data](#displaying-web-scraped-data)
+Jump to: [Page Top](#live-project---appbuilder9000) | [Basic app, model and CRUD pages](#basic-app-model-and-crud-pages) | [External database API](#external-database-api) | [Displaying web scraped data](#displaying-web-scraped-data)
