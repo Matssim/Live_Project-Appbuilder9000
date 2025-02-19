@@ -138,7 +138,7 @@ I also created views/templates that allows the users to <a href="https://github.
         results = Brewery.objects.filter(name__icontains=query)
         return render(request, 'PortlandBreweries/SearchResults.html', {'results': results, 'query': query})
 
-[INSERT DEMO GIF] 
+![CRUD DEMO](https://github.com/Matssim/Live_Project-Appbuilder9000/blob/main/PresentationMaterials/CRUDdemo-ezgif.com-video-to-gif-converter.gif) 
 
 
 ## External database API 
@@ -169,7 +169,7 @@ I then included a search bar letting the user to input a query, which is concate
             breweries.append(search_results)
         return render(request, "PortlandBreweries/OBDBsearchResults.html", {'breweries': breweries, 'input': input})
  
-[INSERT DEMO GIF] 
+![API DEMO](https://github.com/Matssim/Live_Project-Appbuilder9000/blob/main/PresentationMaterials/APIdemo-ezgif.com-video-to-gif-converter.gif) 
 
 
 ## Displaying web scraped data 
@@ -191,6 +191,6 @@ In addition to the databases I included a regularly updated view to display upco
         return render(request, "PortlandBreweries/BeerEvents.html", {'dictionaries': events})
  
 
-[INSERT DEMO GIF] 
+![WEB SCRAPE DEMO](https://github.com/Matssim/Live_Project-Appbuilder9000/blob/main/PresentationMaterials/WebScrapeDemo-ezgif.com-video-to-gif-converter.gif) 
 
 Jump to: [Page Top](#live-project---appbuilder9000) | [Basic app, model and CRUD pages](#basic-app-model-and-crud-pages) | [External database API](#external-database-api) | [Displaying web scraped data](#displaying-web-scraped-data)
